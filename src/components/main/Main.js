@@ -9,7 +9,7 @@ const Main = () => {
         {/* <!-- MAIN CARDS STARTS HERE --> */}
         <div className="main__cards">
             <div className="card1">
-              <h2 className="text_white">578</h2>
+              <h2 className="text_white">438</h2>
               <p className="text_white">Users online</p>
             </div>
 
@@ -109,7 +109,7 @@ const Main = () => {
 
               <div className="card4">
                 <h1 className="text_white">Total</h1>
-                <p className="text_white">2367</p>
+                <p className="text_white">9367</p>
               </div>
             </div>
           </div>

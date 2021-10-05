@@ -7,9 +7,8 @@ import Users from "./pages/Users";
 import Developers from "./pages/Developers";
 import Notification from "./pages/Notification";
 import Info from "./pages/Info";
-import Setting from "./pages/Setting";
-import Support from "./pages/Support";
 import Logout from "./pages/Logout";
+import Setting from "./pages/Setting";
 import './App.css';
 
 function App() {
@@ -24,9 +23,8 @@ function App() {
           <Route path='/users' component={Users} />
           <Route path='/notification' component={Notification} />
           <Route path='/info' component={Info} />
-          <Route path='/logout' component={Logout} />
           <Route path='/setting' component={Setting} />
-          <Route path='/support' component={Support} />
+          <Route path='/logout' component={Logout} />
         </Switch>
     </Router>
     </>

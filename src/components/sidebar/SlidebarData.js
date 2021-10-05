@@ -1,8 +1,8 @@
 import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import * as IoIcons from 'react-icons/io';
 import {CgGames,CgLogOut} from 'react-icons/cg';
+import {FiSettings} from 'react-icons/fi'
 
 export const SidebarData = [
   {
@@ -38,13 +38,7 @@ export const SidebarData = [
   {
     title: 'Setting',
     path: '/setting',
-    icon: <AiIcons.AiOutlineSetting />,
-    cName: 'nav-text'
-  },
-  {
-    title: 'Support',
-    path: '/support',
-    icon: <IoIcons.IoMdHelpCircle />,
+    icon: <FiSettings />,
     cName: 'nav-text'
   },
   {

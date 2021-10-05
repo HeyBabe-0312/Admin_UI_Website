@@ -3,6 +3,7 @@ import { Bar } from "react-chartjs-2";
 
 const Chart1 = () =>{
     return (
+      
         <Bar height={250} width={430}
             data={{
               labels: [
@@ -14,6 +15,15 @@ const Chart1 = () =>{
               ],
               datasets: [
                 {
+                  xAxes: [{
+                    type: 'time',
+                    position: 'bottom',
+                    time: {
+                      displayFormats: {'day': 'MM/YY'},
+                      tooltipFormat: 'DD/MM/YY',
+                      unit: 'month',
+                     }
+                  }],
                   label: "Players",
                   backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',

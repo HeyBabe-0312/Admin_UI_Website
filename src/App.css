@@ -10,10 +10,9 @@
 .developers,
 .users,
 .games,
-.setting,
-.support,
 .notification,
 .info,
+.setting,
 .logout{
   display: flex;
   height: 90vh;

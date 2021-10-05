@@ -7,6 +7,15 @@ const data = {
   labels: ["0AM", "4AM", "8AM", "12PM", "16PM", "20PM","24PM"],
   datasets: [
     {
+      xAxes: [{
+        type: 'time',
+        position: 'bottom',
+        time: {
+          displayFormats: {'day': 'MM/YY'},
+          tooltipFormat: 'DD/MM/YY',
+          unit: 'month',
+         }
+      }],
       label: "Online users",
       data: [133, 153, 285, 365, 386, 530, 230],
       fill: true,

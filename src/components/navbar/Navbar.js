@@ -5,13 +5,17 @@ import {GiConsoleController} from 'react-icons/gi'
 import "./Navbar.css";
 import {SidebarData} from '../sidebar/SlidebarData'
 import {IconContext} from 'react-icons'
-import avatar from "../../assets/ava.png";
 import avatar1 from "../../assets/bell.png";
-
+import '../../pages/modal.css';
 function Navbar() {
   const [sidebar, setSidebar] = useState(false)
 
   const showSidebar = () => setSidebar(!sidebar);
+
+  
+  const [detail, setStateE] = useState(false)
+  const showInfo = () => setStateE(!detail);
+
   return (
       <>
       <IconContext.Provider value={{color: '#fff'}}>
@@ -26,11 +30,20 @@ function Navbar() {
               <h1 className="text" >ARCADE GAME</h1>
             </div>
         <div className="navbar__right">
-      <a href="/notification">
-          <img width="20" src={avatar1} alt="avatar1"/>
+        <div className="dropdown">
+             <a className="btn btn-secondary dropdown-toggle" >
+                <div className="dropdown">
+                     <img className="dropbtn" width="20" src={avatar1} alt="avatar1" style={{float: 'right'}} />
+                 <div className="dropdown-content">
+                    <a href="/notification">Notification 1</a>
+                    <a href="/notification">Notification 2</a>
+                    <a href="/notification">Notification 3</a>
+                 </div>
+                 </div>
         </a>
-        <a href="/info">
-          <img width="50" src={avatar} alt="avatar" />
+        </div>
+        <a onClick={showInfo} className="ava1">
+          <img width="40" src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="avatar" />
         </a>
       </div>
       </div>
@@ -48,6 +61,38 @@ function Navbar() {
               })}
           </ul>
       </nav>
+      <div className="bg-modal" style={{display: detail ? 'flex' : 'none' }}>
+    <div className="modal-content" >
+      <div className="close" onClick={showInfo}>+</div>
+      <img width="100px" src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" />
+      <form action>
+      <table>
+        <tbody>
+          <tr>
+            <td>Admin</td>
+            <td>Hacker0312</td>
+          </tr>
+          <tr>
+          <td>Position</td>
+            <td>Admin</td>
+          </tr>
+          <tr>
+          <td>Name</td>
+            <td>Ho Minh Hieu</td>
+          </tr>
+          <tr>
+          <td>Gmail</td>
+            <td>admin00@gmail.com</td>
+          </tr>
+          <tr>
+          <td>Phone</td>
+            <td>0928123456</td>
+          </tr>
+        </tbody></table>
+      </form>
+      <a href="/setting" className="button1">Edit</a>
+    </div>
+  </div>
       </IconContext.Provider>
       </>
   )
