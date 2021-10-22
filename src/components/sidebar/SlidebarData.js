@@ -17,12 +17,12 @@ export const SidebarData = [
     icon: <CgGames />,
     cName: 'nav-text'
   },
-  {
-    title: 'Developers',
-    path: '/developers',
-    icon: <FaIcons.FaRegUserCircle />,
-    cName: 'nav-text'
-  },
+  // {
+  //   title: 'Developers',
+  //   path: '/developers',
+  //   icon: <FaIcons.FaRegUserCircle />,
+  //   cName: 'nav-text'
+  // },
   {
     title: 'Users',
     path: '/users',
@@ -35,12 +35,12 @@ export const SidebarData = [
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
   },
-  {
-    title: 'Setting',
-    path: '/setting',
-    icon: <FiSettings />,
-    cName: 'nav-text'
-  },
+  // {
+  //   title: 'Setting',
+  //   path: '/setting',
+  //   icon: <FiSettings />,
+  //   cName: 'nav-text'
+  // },
   {
     title: 'Log out',
     path: '/logout',

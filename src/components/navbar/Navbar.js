@@ -8,14 +8,34 @@ import {IconContext} from 'react-icons'
 import avatar1 from "../../assets/bell.png";
 import '../../pages/modal.css';
 function Navbar() {
+  var src1 = "https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg";
+  var ava1 = document.getElementById("avaAdmin");
   const [sidebar, setSidebar] = useState(false)
-
   const showSidebar = () => setSidebar(!sidebar);
-
   
   const [detail, setStateE] = useState(false)
-  const showInfo = () => setStateE(!detail);
+  const showInfo = () =>{
+    var avaInfo1 = document.getElementById('avaInfo');
+    if( ava1 != null) {avaInfo1.src = ava1.src;}
+    else {avaInfo1.src = "https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg";}
+    setStateE(!detail);
+  }
+  const [editform, setEdit] = useState(false)
+  const showEdit = () => {
+    var output = document.getElementById('output');
+    output.src = document.getElementById('avaAdmin').src;
+    setStateE(!detail);
+    setEdit(!editform)};
+  const setImg = () => {
+    ava1.src = src1;
+    setEdit(!editform);
+  };
 
+  var showImg = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    src1 = URL.createObjectURL(event.target.files[0]);
+  };
   return (
       <>
       <IconContext.Provider value={{color: '#fff'}}>
@@ -43,7 +63,7 @@ function Navbar() {
         </a>
         </div>
         <a onClick={showInfo} className="ava1">
-          <img width="40" src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="avatar" />
+          <img width="40" height="40" src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="avatar" id="avaAdmin"/>
         </a>
       </div>
       </div>
@@ -64,7 +84,7 @@ function Navbar() {
       <div className="bg-modal" style={{display: detail ? 'flex' : 'none' }}>
     <div className="modal-content" >
       <div className="close" onClick={showInfo}>+</div>
-      <img width="100px" src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" />
+      <img width="100px" src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" height="100px" id="avaInfo"/>
       <form action>
       <table>
         <tbody>
@@ -90,9 +110,45 @@ function Navbar() {
           </tr>
         </tbody></table>
       </form>
-      <a href="/setting" className="button1">Edit</a>
+      <a onClick={showEdit} className="button1">Edit</a>
     </div>
-  </div>
+              </div>
+  <div className="bg-modal" style={{display: editform ? 'flex' : 'none' }}>
+  <div className="modal-editAdmin" >
+      <div className="close" onClick={showEdit}>+</div>
+      <form runat="server">
+              <img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="Image 1" id="output"  width="100px" height="100px" className="avaa"/>            
+              <input accept="image/*" type='file' onChange={showImg}/>
+      </form> 
+      <form action>
+      <div className="table_content">
+        <tbody>
+          <tr>
+            <td className="no_border">Admin</td>
+            <td className="no_border"><input type="search" id="site-search" name="q" className="inputE"
+       aria-label="Search through site content" minlength="4" maxlength="16" size="35" placeholder="Hacker0312"/></td>
+          </tr>
+          <tr>
+          <td className="no_border">Name</td>
+            <td className="no_border"><input type="text" id="name" name="name" required placeholder="Ho Minh Hieu" className="inputE"
+       minlength="4" maxlength="20" size="35"/></td>
+          </tr>
+          <tr>
+          <td className="no_border">Gmail</td>
+            <td className="no_border"><input type="email" id="email" placeholder="admin00@gmail.com" className="inputE"
+       pattern=".+@globex\.com" size="35" required/></td>
+          </tr>
+          <tr>
+          <td className="no_border">Phone</td>
+            <td className="no_border"><input type="tel" id="phone" name="phone" placeholder="0928123456" className="inputE"
+       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" size="35"
+       required/></td>
+          </tr>
+        </tbody></div>
+      </form>
+      <a className="button1" onClick={setImg} >Save</a>
+    </div>
+    </div>
       </IconContext.Provider>
       </>
   )

@@ -19,6 +19,33 @@
 	padding: 20px;
 	position: relative;
 }
+.modal-edit{
+	width: 550px;
+	height: 590px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-editUser{
+	width: 530px;
+	height: 550px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-editAdmin{
+	width: 530px;
+	height: 500px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
 .modal-mess{
 	width: 540px;
 	height: 520px;

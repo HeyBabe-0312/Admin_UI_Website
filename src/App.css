@@ -12,7 +12,7 @@
 .games,
 .notification,
 .info,
-.setting,
+/* .setting, */
 .logout{
   display: flex;
   height: 90vh;

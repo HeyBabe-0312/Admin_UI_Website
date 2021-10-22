@@ -11,7 +11,17 @@
     text-align: left;
     border-bottom: 1px solid rgb(102, 102, 102);
   }
-
+  .table_content{
+    border-collapse: separate;
+    width: 70%;
+    justify-content: center;
+	align-items: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .no_border{
+    border-bottom: 0px solid #fff;
+  }
 .name {
     vertical-align: super;
     margin-right: 50px;
@@ -41,7 +51,18 @@
 	align-items: center;
 	text-align: left;
 }
-
+.div_e {
+  width: 250px;
+  background-color: whitesmoke;
+  height: 30px;
+  padding: 5px;
+  vertical-align: top;
+  border: 1px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  justify-content: center;
+	align-items: center;
+	text-align: left;
+}
 .div2 {
   width: 400px;
   margin-top: 20px;
